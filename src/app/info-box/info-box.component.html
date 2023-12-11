@@ -1,5 +1,13 @@
-<div class="mt-4 bg-green-800 p-3 w-80 rounded shadow-lg shadow-gray-700" [ngStyle]="{'color': color, 'border': '3px solid ' + color}">
+<div
+	class="mt-4 bg-green-800 p-3 w-80 rounded shadow-lg shadow-gray-700"
+	[ngStyle]="{ color: color, border: '3px solid ' + color }"
+>
 	<div *ngIf="status === 'danger'" class="text-xl">please read</div>
-	<h2 class="text-3xl text-yellow-400">{{title}}</h2>
-	<p class="text-xl italic text-gray-300">{{body}}</p>
+	<h2 class="text-3xl text-yellow-400">{{ title }}</h2>
+	<p class="text-xl italic text-gray-300">{{ body }}</p>
+	<div [ngSwitch]="status" class="border-t border-green-900 mt-5 pt-2">
+		<span *ngSwitchCase="'danger'">This info-box warns a user.</span>
+		<span *ngSwitchCase="'success'">Success is displayed when no action is required.</span>
+		<span *ngSwitchDefault>Unknown status code: {{ status }}</span>
+	</div>
 </div>
