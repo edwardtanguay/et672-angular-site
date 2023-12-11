@@ -1,4 +1,5 @@
 <div class="mt-4 bg-green-800 p-3 w-80 rounded shadow-lg shadow-gray-700" [ngStyle]="{'color': color, 'border': '3px solid ' + color}">
+	<div *ngIf="status === 'danger'" class="text-xl">please read</div>
 	<h2 class="text-3xl text-yellow-400">{{title}}</h2>
 	<p class="text-xl italic text-gray-300">{{body}}</p>
 </div>

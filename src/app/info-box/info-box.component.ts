@@ -16,7 +16,7 @@ export class InfoBoxComponent {
 	color = '';
 
 	ngOnInit() {
-		this.color = this.status === 'danger' ? 'darkred' : 'lightgreen';
+		this.color = this.status === 'danger' ? 'red' : 'lightgreen';
 	}
 }
 
