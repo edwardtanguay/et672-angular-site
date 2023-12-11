@@ -1,1 +1,7 @@
 <p class="mt-4">Welcome to this site.</p>
+
+<p>Current time is {{ now }}.</p>
+<p>Today is {{ now | date }}.</p>
+<p>Today is {{ now | uppercase }}.</p>
+<p>Today is {{ now | date : "longDate" | uppercase }}.</p>
+<p>The file name is <code class="text-yellow-300 bg-black p-1 rounded">{{ now | date : "logfile-yyyy-MM-dd-HH-mm-ss.txt" }}</code>.</p>
