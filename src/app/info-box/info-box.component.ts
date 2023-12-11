@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NumtonamePipe } from "../../shared/numtoname.pipe";
 
 @Component({
 	selector: 'app-info-box',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, NumtonamePipe],
 	templateUrl: './info-box.component.html',
 	styleUrl: './info-box.component.scss',
 })
