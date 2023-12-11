@@ -1,6 +1,15 @@
-<p class="mt-4">There are {{ employees.length }} employees:</p>
+<div class="mt-4">
+	<p *ngIf="searchText === ''">There are {{ employees.length }} employees:</p>
+	<p *ngIf="searchText !== ''">Searching for "{{ searchText }}"...</p>
+</div>
 
-<div class="mt-3 bg-blue-950 w-5/12 rounded p-3" *ngFor="let emp of employees">
-		<p class="text-yellow-300 text-2xl">{{ emp.firstName }} {{ emp.lastName }}</p>
+<input type="text" class="mt-2 text-2xl rounded" [(ngModel)]="searchText" />
+
+<div *ngFor="let emp of employees">
+	<div class="mt-3 bg-blue-950 w-5/12 rounded p-3" *ngIf="employeeHasSearchText(emp)">
+		<p class="text-yellow-300 text-2xl">
+			{{ emp.firstName }} {{ emp.lastName }}
+		</p>
 		<p class="text-gray-300 italic">{{ emp.notes }}</p>
+	</div>
 </div>

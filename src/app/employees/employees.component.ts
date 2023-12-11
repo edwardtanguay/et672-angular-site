@@ -2,16 +2,18 @@ import { Component } from '@angular/core';
 import { IEmployee } from '../../shared/interfaces';
 import { CommonModule } from '@angular/common';
 import axios from 'axios';
+import { FormsModule } from '@angular/forms';
 
 @Component({
 	selector: 'app-employees',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, FormsModule],
 	templateUrl: './employees.component.html',
 	styleUrl: './employees.component.scss',
 })
 export class EmployeesComponent {
 	employees: IEmployee[] = [];
+	searchText: string = '';
 
 	constructor() {
 		(async () => {
@@ -27,5 +29,10 @@ export class EmployeesComponent {
 				});
 			});
 		})();
+	}
+
+	employeeHasSearchText(emp: IEmployee): boolean {
+		const bulkText = emp.firstName + '|' + emp.lastName + '|' + emp.notes;
+		return bulkText.toLowerCase().includes(this.searchText.toLowerCase());
 	}
 }
