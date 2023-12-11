@@ -14,9 +14,14 @@ export class InfoBoxComponent {
 	@Input() body = '(watch this space...)';
 
 	color = '';
+	showDevInfo = false;
 
 	ngOnInit() {
-		this.color = this.status === 'danger' ? 'tomato' : this.status === 'success' ? 'lightgreen' : '#222';
+		this.color =
+			this.status === 'danger'
+				? 'tomato'
+				: this.status === 'success'
+				? 'lightgreen'
+				: '#222';
 	}
-}	
-
+}
