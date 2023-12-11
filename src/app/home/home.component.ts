@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+
+registerLocaleData(localeDe);
 
 @Component({
 	selector: 'app-home',
 	standalone: true,
-	imports: [ CommonModule],
+	imports: [CommonModule],
 	templateUrl: './home.component.html',
 	styleUrl: './home.component.scss',
 })
