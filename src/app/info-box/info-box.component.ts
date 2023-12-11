@@ -11,10 +11,12 @@ import { CommonModule } from '@angular/common';
 export class InfoBoxComponent {
 	@Input() status = '';
 	@Input() title = 'Info Box';
+	@Input() highlight = '';
 	@Input() body = '(watch this space...)';
 
 	color = '';
 	showDevInfo = false;
+	isHighlighted = false;
 
 	ngOnInit() {
 		this.color =
@@ -23,6 +25,7 @@ export class InfoBoxComponent {
 				: this.status === 'success'
 				? 'lightgreen'
 				: '#222';
+		this.isHighlighted = this.highlight === 'true';
 	}
 
 	handleDevInfoButtonClick = () => {
