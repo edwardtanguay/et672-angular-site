@@ -24,4 +24,9 @@ export class InfoBoxComponent {
 				? 'lightgreen'
 				: '#222';
 	}
+
+	handleDevInfoButtonClick = () => {
+		this.showDevInfo = !this.showDevInfo;
+		console.log(`button for info-box "${this.title}" clicked`);
+	};
 }
